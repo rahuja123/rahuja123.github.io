@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Research — Rahul Ahuja</title>
-<meta name="description" content="Publications and patents by Rahul Ahuja on scene flow, 3D detection, multimodal fusion, and person re-identification.">
+<meta name="description" content="Publications and patents by Rahul Ahuja on vision-language-action driving policies, fisheye perception, scene flow, 3D detection, and re-identification.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://rahuja123.github.io/research.html">
 <meta property="og:title" content="Research — Rahul Ahuja">
@@ -15,10 +15,10 @@
 <meta property="og:image:alt" content="Rahul Ahuja — Vision-language-action, Vision, Robotics &amp; 3D. Staff Deep Learning Engineer, Qualcomm.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="assets/style.css?v=3">
+<link rel="stylesheet" href="assets/style.css?v=4">
 </head>
 <body>
-<div class="wrap">
+<div class="wrap wide">
 
 <header>
   <nav>
@@ -30,59 +30,68 @@
 <main>
   <h1>Papers</h1>
 
-  <div class="entry">
-    <a class="t" href="https://arxiv.org/abs/2604.10391">FishRoPE: Projective Rotary Position Embeddings for Omnidirectional Visual Perception</a>
-    <span class="meta">
-      Ahuja, Jain, Sudhakar, Narayanan, Likhar, Ravi Kumar, Yogamani<br>
-      <b>CVPR Workshops 2026 · Best Paper</b> · <a href="https://arxiv.org/pdf/2604.10391">PDF</a>
-    </span>
-    <p>Attention in angles rather than pixels, for cameras that aren't pinholes.</p>
-  </div>
+  <article class="paper">
+    <a class="thumb" href="https://arxiv.org/abs/2608.28656" tabindex="-1" aria-hidden="true"><img src="assets/thumbs/redlight-vla.svg" alt="" width="160" height="120" loading="lazy"></a>
+    <div>
+      <a class="t" href="https://arxiv.org/abs/2608.28656">RedLight-VLA: Models for Traffic-Rule Grounding and Behavioral Emphasis in Driving Policies</a>
+      <span class="meta">Sudhakar, Sridhar, Das, <span class="me">Ahuja</span>, Lazar, Garg, Likhar, Yogamani<br>Preprint, 2026 · <a href="https://arxiv.org/pdf/2608.28656">PDF</a></span>
+      <p>Driving policies rarely learn to stop well at red lights, because braking barely moves the average loss. We up-weight those rare moments and give the model explicit traffic-light and stop-line heads.</p>
+    </div>
+  </article>
 
-  <div class="entry">
-    <a class="t" href="https://arxiv.org/abs/2401.02550">OptFlow: Fast Optimization-Based Scene Flow Estimation Without Supervision</a>
-    <span class="meta">
-      Ahuja, Baker, Schwarting<br>
-      <b>WACV 2024 · Oral</b> ·
-      <a href="https://openaccess.thecvf.com/content/WACV2024/papers/Ahuja_OptFlow_Fast_Optimization-Based_Scene_Flow_Estimation_Without_Supervision_WACV_2024_paper.pdf">PDF</a> ·
-      <a href="https://www.youtube.com/watch?v=1eyvUmMqqYA">Talk</a>
-    </span>
-    <p>No learning, no labels. Beat Neural Scene Flow Prior by 5–7% and ran faster than every non-learning method compared.</p>
-  </div>
+  <article class="paper">
+    <a class="thumb" href="https://arxiv.org/abs/2604.10391" tabindex="-1" aria-hidden="true"><img src="assets/thumbs/fishrope.svg" alt="" width="160" height="120" loading="lazy"></a>
+    <div>
+      <a class="t" href="https://arxiv.org/abs/2604.10391">FishRoPE: Projective Rotary Position Embeddings for Omnidirectional Visual Perception</a>
+      <span class="meta"><span class="me">Ahuja</span>, Jain, Sudhakar, Narayanan, Likhar, Ravi Kumar, Yogamani<br><b>CVPR Workshops 2026 · Best Paper</b> · <a href="https://arxiv.org/pdf/2604.10391">PDF</a></span>
+      <p>Attention in angles rather than pixels, for cameras that aren't pinholes.</p>
+    </div>
+  </article>
 
-  <div class="entry">
-    <a class="t" href="https://arxiv.org/abs/2602.08126">MambaFusion: Adaptive State-Space Fusion for Multimodal 3D Object Detection</a>
-    <span class="meta">
-      Narayanan, Sai, Ahuja, Likhar, Ravi Kumar, Yogamani<br>
-      Preprint, 2026 · <a href="https://arxiv.org/pdf/2602.08126">PDF</a>
-    </span>
-  </div>
+  <article class="paper">
+    <a class="thumb" href="https://arxiv.org/abs/2602.08126" tabindex="-1" aria-hidden="true"><img src="assets/thumbs/mambafusion.svg" alt="" width="160" height="120" loading="lazy"></a>
+    <div>
+      <a class="t" href="https://arxiv.org/abs/2602.08126">MambaFusion: Adaptive State-Space Fusion for Multimodal 3D Object Detection</a>
+      <span class="meta">Narayanan, Sai, <span class="me">Ahuja</span>, Likhar, Ravi Kumar, Yogamani<br>Preprint, 2026 · <a href="https://arxiv.org/pdf/2602.08126">PDF</a></span>
+      <p>Camera and LiDAR fused with state-space models, for 3D detection.</p>
+    </div>
+  </article>
 
-  <div class="entry">
-    <a class="t" href="https://arxiv.org/abs/2310.00892">No Offense Taken: Eliciting Offensiveness from Language Models</a>
-    <span class="meta">
-      Srivastava, Ahuja, Mukku<br>
-      Preprint, 2023 · <a href="https://github.com/rahuja123/RedTeamingLanguageModels">Code</a>
-    </span>
-    <p>Red-teaming GPT-2 with reinforcement learning, to find the failure modes before anyone else does.</p>
-  </div>
+  <article class="paper">
+    <a class="thumb" href="https://arxiv.org/abs/2401.02550" tabindex="-1" aria-hidden="true"><img src="assets/thumbs/optflow.svg" alt="" width="160" height="120" loading="lazy"></a>
+    <div>
+      <a class="t" href="https://arxiv.org/abs/2401.02550">OptFlow: Fast Optimization-Based Scene Flow Estimation Without Supervision</a>
+      <span class="meta"><span class="me">Ahuja</span>, Baker, Schwarting<br><b>WACV 2024 · Oral</b> · <a href="https://openaccess.thecvf.com/content/WACV2024/papers/Ahuja_OptFlow_Fast_Optimization-Based_Scene_Flow_Estimation_Without_Supervision_WACV_2024_paper.pdf">PDF</a> · <a href="https://www.youtube.com/watch?v=1eyvUmMqqYA">Talk</a></span>
+      <p>No learning, no labels. Beat Neural Scene Flow Prior by 5–7% and ran faster than every non-learning method compared.</p>
+    </div>
+  </article>
 
-  <div class="entry">
-    <a class="t" href="https://arxiv.org/abs/2207.01204">Adversarial Pairwise Reverse Attention for Camera Performance Imbalance in Person Re-identification</a>
-    <span class="meta">
-      Ang, Lin, Ahuja, Ahmed, Kot<br>
-      IEEE ICIP 2022 · <a href="https://ieeexplore.ieee.org/document/9897509/">IEEE Xplore</a>
-    </span>
-    <p>A re-ID system is only as good as its worst camera. New dataset and metrics for measuring that.</p>
-  </div>
+  <article class="paper">
+    <a class="thumb" href="https://arxiv.org/abs/2310.00892" tabindex="-1" aria-hidden="true"><img src="assets/thumbs/no-offense-taken.svg" alt="" width="160" height="120" loading="lazy"></a>
+    <div>
+      <a class="t" href="https://arxiv.org/abs/2310.00892">No Offense Taken: Eliciting Offensiveness from Language Models</a>
+      <span class="meta">Srivastava, <span class="me">Ahuja</span>, Mukku<br>Preprint, 2023 · <a href="https://github.com/rahuja123/RedTeamingLanguageModels">Code</a></span>
+      <p>Red-teaming GPT-2 with reinforcement learning, to find the failure modes before anyone else does.</p>
+    </div>
+  </article>
 
-  <div class="entry">
-    <a class="t" href="https://ieeexplore.ieee.org/document/8540416/">Robust Discriminative Subspace Learning for Person Re-identification</a>
-    <span class="meta">
-      Subramanyam, Gupta, Ahuja<br>
-      IEEE Signal Processing Letters 26(1)
-    </span>
-  </div>
+  <article class="paper">
+    <a class="thumb" href="https://arxiv.org/abs/2207.01204" tabindex="-1" aria-hidden="true"><img src="assets/thumbs/apra.svg" alt="" width="160" height="120" loading="lazy"></a>
+    <div>
+      <a class="t" href="https://arxiv.org/abs/2207.01204">Adversarial Pairwise Reverse Attention for Camera Performance Imbalance in Person Re-identification</a>
+      <span class="meta">Ang, Lin, <span class="me">Ahuja</span>, Ahmed, Kot<br>IEEE ICIP 2022 · <a href="https://ieeexplore.ieee.org/document/9897509/">IEEE Xplore</a></span>
+      <p>A re-ID system is only as good as its worst camera. New dataset and metrics for measuring that, and a way to close the gap.</p>
+    </div>
+  </article>
+
+  <article class="paper">
+    <a class="thumb" href="https://ieeexplore.ieee.org/document/8540416/" tabindex="-1" aria-hidden="true"><img src="assets/thumbs/rdsl.svg" alt="" width="160" height="120" loading="lazy"></a>
+    <div>
+      <a class="t" href="https://ieeexplore.ieee.org/document/8540416/">Robust Discriminative Subspace Learning for Person Re-identification</a>
+      <span class="meta">Subramanyam, Gupta, <span class="me">Ahuja</span><br>IEEE Signal Processing Letters 26(1), 2019</span>
+      <p>Learning the subspace with an L1 norm instead of L2, so outliers stop dragging it around.</p>
+    </div>
+  </article>
 
   <h2>Patents</h2>
   <p class="muted">

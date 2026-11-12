@@ -6,7 +6,8 @@ Personal site. Deliberately minimal: two pages, no web fonts, no build step, one
 index.html          # home: one-line intro, three focus areas, links
 research.html       # full paper list + patents
 assets/style.css    # the only stylesheet (follows system light/dark)
-assets/viz.js       # the two canvas illustrations (VLA camera view, scene-flow sweep)
+assets/viz.js       # the canvas illustrations on the home page (VLA, fisheye, scene flow)
+assets/thumbs/      # one diagram per paper, shown left of it on research.html
 assets/og-card.html # source for og.png, the link-preview image
 assets/og.png       # 1200×630 preview shown when the link is shared
 ```
@@ -34,8 +35,11 @@ the git history before the "Minimal personal site" commit.
 
 ## Editing
 
-- **Add a paper**: copy a `<div class="entry">` block in `research.html`. If it belongs
-  on the home page, add a link line under the matching focus area in `index.html`.
+- **Add a paper**: copy an `<article class="paper">` block in `research.html` and point its
+  `<img>` at a new file in `assets/thumbs/`. The thumbnails are plain 160×120 SVGs that
+  switch colours with light/dark mode; to use a real figure from the paper instead, drop
+  a PNG/JPG (4:3, ~480×360) in that folder and change the `src`. If the paper belongs on
+  the home page, add a link line under the matching focus area in `index.html`.
 - **Keep the home page short.** The design depends on it — detail goes in `research.html`.
 - **After changing CSS or JS**, bump the `?v=` number on its `<link>`/`<script>` tag so
   browsers don't keep serving the cached copy.

@@ -99,3 +99,23 @@ h2 { font-family: var(--mono); font-weight: 500; letter-spacing: .06em; }
 .viz { display: block; width: 100%; margin: 20px 0 8px; }
 .viz-cap { font: 12px/1.5 var(--mono); color: var(--faint); display: flex; gap: 14px; flex-wrap: wrap; }
 .viz-cap i { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+
+/* ---------- Research: diagram left, description right ---------- */
+.wrap.wide { max-width: 44rem; }
+.paper {
+  display: grid; grid-template-columns: 168px 1fr; gap: 24px; align-items: start;
+  padding: 24px 0; border-top: 1px solid var(--line);
+}
+.paper:first-of-type { border-top: 0; padding-top: 4px; }
+.paper .thumb { display: block; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; line-height: 0; }
+.paper .thumb img { width: 100%; height: auto; display: block; }
+.paper .thumb:hover { border-color: var(--accent); }
+.paper .t { display: block; margin-bottom: 4px; line-height: 1.4; }
+.paper .meta { display: block; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.paper .meta .me { color: var(--ink); }
+.paper .meta b { color: var(--ink); font-weight: 500; }
+.paper p { margin: 8px 0 0; color: var(--muted); font-size: 15px; }
+@media (max-width: 560px) {
+  .paper { grid-template-columns: 104px 1fr; gap: 14px; }
+  .paper p { font-size: 14.5px; }
+}
