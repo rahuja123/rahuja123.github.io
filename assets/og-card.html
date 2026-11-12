@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- Source for assets/og.png (the link preview image). Regenerate with the command in README.md. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  :root { --bg:#0c0c0e; --ink:#e9e9ec; --muted:#8e8e97; --faint:#62626b; --accent:#6fd0c4;
+          --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+  html, body { margin:0; width:1200px; height:630px; overflow:hidden; background:var(--bg); color:var(--ink);
+               font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+               -webkit-font-smoothing: antialiased; }
+  .text { position:absolute; left:88px; top:0; bottom:0; width:640px; display:flex; flex-direction:column; justify-content:center; z-index:1; }
+  .bbox { --c:var(--accent); --l:18px; --w:2.5px; position:relative; align-self:flex-start; padding:10px 20px; margin-left:-20px;
+    background:
+      linear-gradient(var(--c),var(--c)) top left    / var(--l) var(--w) no-repeat,
+      linear-gradient(var(--c),var(--c)) top left    / var(--w) var(--l) no-repeat,
+      linear-gradient(var(--c),var(--c)) top right   / var(--l) var(--w) no-repeat,
+      linear-gradient(var(--c),var(--c)) top right   / var(--w) var(--l) no-repeat,
+      linear-gradient(var(--c),var(--c)) bottom left / var(--l) var(--w) no-repeat,
+      linear-gradient(var(--c),var(--c)) bottom left / var(--w) var(--l) no-repeat,
+      linear-gradient(var(--c),var(--c)) bottom right/ var(--l) var(--w) no-repeat,
+      linear-gradient(var(--c),var(--c)) bottom right/ var(--w) var(--l) no-repeat; }
+  .tag { position:absolute; left:0; top:-32px; font:500 19px/1 var(--mono); padding:7px 10px 6px; background:var(--accent); color:var(--bg); }
+  h1 { margin:0; font-size:84px; font-weight:600; letter-spacing:-0.03em; line-height:1.08; }
+  .areas { margin-top:40px; font-size:30px; color:var(--ink); letter-spacing:-0.01em; }
+  .role { margin-top:16px; font:22px var(--mono); color:var(--muted); }
+  canvas { position:absolute; right:0; top:0; width:560px;
+           -webkit-mask-image: linear-gradient(to right, transparent, #000 45%); mask-image: linear-gradient(to right, transparent, #000 45%); }
+</style>
+</head>
+<body>
+  <div class="text">
+    <div class="bbox"><span class="tag">person 0.99</span><h1>Rahul Ahuja</h1></div>
+    <div class="areas">Vision-language-action · Vision · Robotics &amp; 3D</div>
+    <div class="role">Staff Deep Learning Engineer · Qualcomm</div>
+  </div>
+  <canvas id="flow" data-static data-h="630"></canvas>
+  <script src="viz.js"></script>
+</body>
+</html>

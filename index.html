@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rahul Ahuja</title>
+<meta name="description" content="Rahul Ahuja — vision-language-action models, computer vision, and 3D perception for autonomous driving.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rahuja123.github.io/">
+<meta property="og:title" content="Rahul Ahuja">
+<meta property="og:description" content="Vision-language-action models, vision, and 3D perception for autonomous driving.">
+<meta property="og:image" content="https://rahuja123.github.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Rahul Ahuja — Vision-language-action, Vision, Robotics &amp; 3D. Staff Deep Learning Engineer, Qualcomm.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="assets/style.css?v=3">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <nav>
+    <span class="name"></span>
+    <a href="research.html">Research</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="bbox"><span class="tag">person 0.99</span><h1>Rahul Ahuja</h1></div>
+  </div>
+  <p class="lead">
+    I build models that let machines see and act — vision-language-action policies,
+    perception, and 3D understanding for autonomous driving.
+  </p>
+  <p class="muted">Staff Deep Learning Engineer at Qualcomm, San Diego.</p>
+
+
+  <h2>Focus</h2>
+
+  <div class="entry">
+    <span class="t"><b>Vision-Language-Action</b></span>
+    <p>End-to-end driving policies that go from surround cameras and language straight to action.</p>
+    <canvas id="vla" class="viz" data-h="230" role="img"
+      aria-label="Illustration: a front camera view of a road. An instruction is typed, such as turn left at the intersection or stop for the pedestrian, and a planned trajectory and driving action appear."></canvas>
+    <div class="viz-cap"><span>illustration · camera + instruction → trajectory</span></div>
+  </div>
+
+  <div class="entry">
+    <span class="t"><b>Vision</b></span>
+    <p>
+      Perception for cameras that aren't pinholes, and for data nobody labelled.
+      <br><a href="https://arxiv.org/abs/2604.10391">FishRoPE</a> — CVPR Workshops 2026, Best Paper
+    </p>
+    <canvas id="lens" class="viz" data-h="220" role="img"
+      aria-label="Illustration: a street scene with a car and a pedestrian, slowly morphing from a pinhole camera view to a fisheye view. Straight lines bend while detection boxes stay on their objects."></canvas>
+    <div class="viz-cap"><span>illustration · pinhole ↔ fisheye — the lines bend, the angles don't</span></div>
+  </div>
+
+  <div class="entry">
+    <span class="t"><b>Robotics &amp; 3D</b></span>
+    <p>
+      LiDAR scene flow, camera–LiDAR fusion, and perception for autonomous trucks.
+      <br><a href="https://arxiv.org/abs/2401.02550">OptFlow</a> — WACV 2024, Oral
+      <br><a href="https://arxiv.org/abs/2602.08126">MambaFusion</a> — 2026
+    </p>
+    <canvas id="flow" class="viz" data-h="200" role="img"
+      aria-label="Animated top-down LiDAR sweep: static points stay grey while moving cars are drawn with scene-flow vectors."></canvas>
+    <div class="viz-cap">
+      <span><i style="background:var(--faint)"></i>static</span>
+      <span><i style="background:var(--accent)"></i>moving · scene flow</span>
+    </div>
+  </div>
+
+  <h2>Previously</h2>
+  <p class="muted">ISEE AI · NTU Singapore · NYU Courant</p>
+
+  <h2>Elsewhere</h2>
+  <div class="links">
+    <a href="mailto:rahulahuja2k14@gmail.com">Email</a>
+    <a href="https://scholar.google.com/citations?user=f0853t4AAAAJ">Scholar</a>
+    <a href="https://github.com/rahuja123">GitHub</a>
+    <a href="https://www.linkedin.com/in/rahulahuja123/">LinkedIn</a>
+  </div>
+</main>
+
+<footer></footer>
+
+</div>
+<script src="assets/viz.js?v=5" defer></script>
+</body>
+</html>
