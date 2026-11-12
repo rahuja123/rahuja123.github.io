@@ -33,11 +33,14 @@ body {
 
 /* --- Header --- */
 header { padding: 46px 0 52px; }
-header nav { display: flex; align-items: baseline; gap: 18px; }
+header nav { display: flex; align-items: center; gap: 18px; }
 header .name { font-weight: 600; color: var(--ink); margin-right: auto; }
 header a { color: var(--muted); font-size: 15px; text-decoration: none; }
 header a:hover { color: var(--ink); }
 header a[aria-current="page"] { color: var(--ink); }
+header .icons { display: flex; align-items: center; gap: 14px; padding-left: 18px; border-left: 1px solid var(--line); }
+header .icons a { display: flex; padding: 2px; }
+header .icons svg { width: 17px; height: 17px; fill: currentColor; }
 
 /* --- Type --- */
 h1 { font-size: 16px; font-weight: 600; margin: 0 0 18px; letter-spacing: -0.005em; }
