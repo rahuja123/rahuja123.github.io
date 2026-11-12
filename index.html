@@ -14,8 +14,31 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Rahul Ahuja — Vision-language-action, Vision, Robotics &amp; 3D. Staff Deep Learning Engineer, Qualcomm.">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:,">
-<link rel="stylesheet" href="assets/style.css?v=5">
+<link rel="canonical" href="https://rahuja123.github.io/">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Rahul Ahuja",
+  "url": "https://rahuja123.github.io/",
+  "jobTitle": "Staff Deep Learning Engineer",
+  "worksFor": { "@type": "Organization", "name": "Qualcomm" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "New York University" },
+    { "@type": "CollegeOrUniversity", "name": "Delhi Technological University" }
+  ],
+  "knowsAbout": ["Vision-language-action models", "Computer vision", "Autonomous driving", "3D perception", "Scene flow", "Robotics"],
+  "sameAs": [
+    "https://scholar.google.com/citations?user=f0853t4AAAAJ",
+    "https://github.com/rahuja123",
+    "https://www.linkedin.com/in/rahulahuja123/"
+  ]
+}
+</script>
+<link rel="stylesheet" href="assets/style.css?v=6">
 </head>
 <body>
 <div class="wrap">
@@ -54,7 +77,12 @@
     </p>
     <canvas id="vla" class="viz" data-h="230" role="img"
       aria-label="Illustration: a front camera view of a road. An instruction is typed, such as turn left at the intersection or stop for the pedestrian, and a planned trajectory and driving action appear."></canvas>
-    <div class="viz-cap"><span>illustration · camera + instruction → trajectory</span></div>
+    <div class="chips" data-for="vla" role="group" aria-label="Give the car an instruction">
+      <button type="button">keep lane</button>
+      <button type="button">turn left</button>
+      <button type="button">stop for pedestrian</button>
+    </div>
+    <div class="viz-cap"><span>illustration · pick an instruction → planned trajectory</span></div>
   </div>
 
   <div class="entry">
@@ -65,7 +93,12 @@
     </p>
     <canvas id="lens" class="viz" data-h="220" role="img"
       aria-label="Illustration: a street scene with a car and a pedestrian, slowly morphing from a pinhole camera view to a fisheye view. Straight lines bend while detection boxes stay on their objects."></canvas>
-    <div class="viz-cap"><span>illustration · pinhole ↔ fisheye — the lines bend, the angles don't</span></div>
+    <div class="viz-ctl" data-for="lens">
+      <span>pinhole</span>
+      <input type="range" min="0" max="100" value="0" aria-label="Lens: drag from pinhole to fisheye">
+      <span>fisheye</span>
+    </div>
+    <div class="viz-cap"><span>illustration · drag the lens — the lines bend, the angles don't</span></div>
   </div>
 
   <div class="entry">
@@ -91,6 +124,6 @@
 <footer></footer>
 
 </div>
-<script src="assets/viz.js?v=5" defer></script>
+<script src="assets/viz.js?v=6" defer></script>
 </body>
 </html>

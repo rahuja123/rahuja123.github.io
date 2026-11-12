@@ -26,13 +26,16 @@
       scene.build(s.W, s.H);
     };
     s.render = () => {
+      const t = s.still ? (s.stillT ?? scene.stillT) : s.t;
       ctx.globalAlpha = 1; ctx.clearRect(0, 0, s.W, s.H);
-      scene.draw(ctx, s.W, s.H, s.still ? scene.stillT : s.t);
+      scene.draw(ctx, s.W, s.H, t);
+      s.onRender?.(t);
     };
     s.size(); s.render();
     new ResizeObserver(() => { s.size(); s.render(); }).observe(c);
     new IntersectionObserver(([e]) => (s.visible = e.isIntersecting)).observe(c);
     scenes.push(s);
+    return s;
   }
 
   // ---------------------------------------------------------------- VLA
@@ -132,13 +135,13 @@
         ctx.fillStyle = col.acc; ctx.textBaseline = 'bottom'; ctx.fillText(s.act, 0, H - 2);
       }
     }
-    return { build, draw, stillT: T + 3.5 };          // still frame: the left turn, fully planned
+    return { build, draw, stillT: T + 3.5, T, n: S.length };          // still frame: the left turn, fully planned
   })();
 
   // ---------------------------------------------------------------- Pinhole ↔ fisheye
   const lens = (() => {
     const CYCLE = 8;                                  // hold pinhole, morph, hold fisheye, morph back
-    let cx, cy, f, ground, walls, objects;
+    let cx, cy, f, ground, walls, objects, manual = null;
     // camera frame: X right, Y down, Z forward; camera 1.6 m above the ground
     const seg = (a, b, n) => Array.from({ length: n + 1 }, (_, i) => a.map((v, k) => v + ((b[k] - v) * i) / n));
     const depthLine = (X, Y, z0, z1, n) =>            // even spacing on screen: sample uniformly in 1/Z
@@ -190,7 +193,7 @@
     }
 
     function draw(ctx, W, H, t) {
-      const m = morph(t);
+      const m = manual ?? morph(t);
       ctx.fillStyle = col.dim;
       ctx.globalAlpha = 0.45; dots(ctx, ground, m, 1.4, W, H);
       ctx.globalAlpha = 0.75; dots(ctx, walls, m, 1.4, W, H);
@@ -219,7 +222,7 @@
       ctx.fillStyle = col.dim; ctx.fillText('>', 0, 0);
       ctx.fillStyle = col.ink; ctx.fillText(label, 16, 0);
     }
-    return { build, draw, stillT: 4.75 };             // still frame: fully fisheye
+    return { build, draw, stillT: 4.75, morph, set: v => (manual = v) };             // still frame: fully fisheye
   })();
 
   // ---------------------------------------------------------------- Scene flow
@@ -285,8 +288,31 @@
     return { build, step, draw, stillT: 0.5 };
   })();
 
-  mount('vla', vla);
-  mount('lens', lens);
+  // VLA: instruction chips jump to a scenario; the active chip follows the animation
+  const v = mount('vla', vla);
+  const chips = [...document.querySelectorAll('[data-for="vla"] button')];
+  if (v && chips.length) {
+    let cur = -1;
+    v.onRender = t => {
+      const i = Math.floor(t / vla.T) % vla.n;
+      if (i !== cur) { cur = i; chips.forEach((b, k) => b.setAttribute('aria-pressed', k === i)); }
+    };
+    chips.forEach((b, i) => b.addEventListener('click', () => {
+      v.t = i * vla.T; v.stillT = i * vla.T + 3.5; v.render();
+    }));
+    v.render();
+  }
+
+  // Lens: the slider follows the automatic morph until someone drags it, then it's theirs
+  const l = mount('lens', lens);
+  const slider = document.querySelector('[data-for="lens"] input');
+  if (l && slider) {
+    let user = false;
+    l.onRender = t => { if (!user) slider.value = Math.round(lens.morph(t) * 100); };
+    slider.addEventListener('input', () => { user = true; lens.set(slider.value / 100); l.render(); });
+    l.render();
+  }
+
   mount('flow', flow);
 
   let last = 0;

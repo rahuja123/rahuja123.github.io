@@ -7,7 +7,10 @@ index.html          # home: one-line intro, three focus areas, links
 research.html       # full paper list + patents
 assets/style.css    # the only stylesheet (follows system light/dark)
 assets/viz.js       # the canvas illustrations on the home page (VLA, fisheye, scene flow)
+                    #   and their controls: instruction chips, lens slider
 assets/thumbs/      # one diagram per paper, shown left of it on research.html
+assets/favicon.svg  # tab icon (+ favicon-32.png and apple-touch-icon.png fallbacks)
+404.html            # shown by GitHub Pages for any address that doesn't exist
 assets/og-card.html # source for og.png, the link-preview image
 assets/og.png       # 1200×630 preview shown when the link is shared
 ```
@@ -51,3 +54,6 @@ the git history before the "Minimal personal site" commit.
     --force-device-scale-factor=1 --window-size=1200,630 --virtual-time-budget=2000 \
     --screenshot="$PWD/assets/og.png" "file://$PWD/assets/og-card.html"
   ```
+- **Changed your title or employer?** Update it in three places: the line under the intro
+  in `index.html`, the `jobTitle`/`worksFor` block near the top of `index.html` (what
+  search engines read), and `assets/og-card.html` (then regenerate `og.png`).
